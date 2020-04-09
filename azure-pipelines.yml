@@ -13,6 +13,9 @@ variables:
   
   # Web app name
   webAppName: 'testjm100'
+
+  # Slot name
+  slotName: 'Blue'
   
   # Environment name
   environmentName: 'testjm100'
@@ -73,6 +76,7 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
+              slotName: $(slotName)
               runtimeStack: 'NODE|10.10'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run start'
